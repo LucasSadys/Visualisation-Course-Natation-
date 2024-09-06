@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course de natation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Visualisation de la course de natation</h1>
+
+  <!-- Choix du bassin -->
+  <label for="pool-size">Choisir la taille du bassin :</label>
+  <select id="pool-size">
+    <option value="25">25m</option>
+    <option value="50">50m</option>
+  </select>
+
+  <!-- Distance de la course -->
+  <label for="race-distance">Choisir la distance de la course :</label>
+  <input type="number" id="race-distance" value="100" step="50" min="50">
+
+  <!-- Choix du nombre de nageurs -->
+  <label for="swimmer-count">Nombre de nageurs :</label>
+  <input type="number" id="swimmer-count" value="1" min="1" max="8">
+
+  <!-- Tableau pour entrer les temps et les noms des nageurs -->
+  <h3>Entrer les noms et les temps des nageurs</h3>
+  <div id="times-inputs">
+    <table>
+      <thead>
+        <tr>
+          <th>Nageur</th>
+          <th>Nom</th>
+          <th>Minutes</th>
+          <th>Secondes</th>
+          <th>Centièmes</th>
+          <th>Temps de passage</th>
+        </tr>
+      </thead>
+      <tbody id="swimmer-times">
+        <!-- Lignes générées dynamiquement -->
+      </tbody>
+    </table>
+  </div>
+
+  <button id="start-race">Démarrer la course</button>
+  <button id="reset-race" style="display:none;">Recommencer</button>
+
+  <!-- Visualisation du bassin -->
+  <div id="pool-container">
+    <div id="pool">
+      <!-- Nageurs (points) seront ajoutés ici dynamiquement -->
+    </div>
+  </div>
+
+  <!-- Chronomètre visuel -->
+  <div id="timer">
+    Temps écoulé : <span id="time-display">00:00:00</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
